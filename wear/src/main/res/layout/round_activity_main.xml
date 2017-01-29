@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uk.umf_solutions.warehousehelperv2.Common.MainActivity"
+    tools:context="com.uk.umf_solutions.warehousehelperv2.MainActivity"
     tools:deviceIds="wear_round">
 
     <TextView
-        android:noteId="@+noteId/text"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
