@@ -9,12 +9,17 @@ import io.realm.RealmObject;
 
 public class Wms extends RealmObject {
 
-    public long getId() {
-        return id;
+    private long wmsId;
+    private String messageTitle;
+    private String messageActions;
+    private String messageDescription;
+
+    public long getWmsId() {
+        return wmsId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setWmsId(long wmsId) {
+        this.wmsId = wmsId;
     }
 
     public String getMessageTitle() {
@@ -33,16 +38,12 @@ public class Wms extends RealmObject {
         this.messageActions = messageActions;
     }
 
-    public String getMessageDiscription() {
-        return messageDiscription;
+    public String getMessageDescription() {
+        return messageDescription;
     }
 
-    public void setMessageDiscription(String messageDiscription) {
-        this.messageDiscription = messageDiscription;
+    public void setMessageDescription(String messageDescription) {
+        this.messageDescription = messageDescription;
     }
 
-    private long id;
-    private String messageTitle;
-    private String messageActions;
-    private String messageDiscription;
 }
