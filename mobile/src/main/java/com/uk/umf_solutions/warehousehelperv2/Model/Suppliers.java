@@ -9,12 +9,23 @@ import io.realm.RealmObject;
 
 public class Suppliers extends RealmObject{
 
-    public long getId() {
-        return id;
+    private long supplierId;
+    private String supplier;
+    private String supplierCode;
+    private String planner;
+    private String plannerNumber;
+    private String backupPlanner;
+    private String backupPlannerNumber;
+    private String country;
+    private String plannerEmail;
+    private long numberOfParts;
+
+    public long getSupplierId() {
+        return supplierId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setSupplierId(long supplierId) {
+        this.supplierId = supplierId;
     }
 
     public String getSupplier() {
@@ -81,22 +92,13 @@ public class Suppliers extends RealmObject{
         this.plannerEmail = plannerEmail;
     }
 
-    public long getNumberOfItems() {
-        return numberOfItems;
+    public long getNumberOfParts() {
+        return numberOfParts;
     }
 
-    public void setNumberOfItems(long numberOfItems) {
-        this.numberOfItems = numberOfItems;
+    public void setNumberOfParts(long numberOfParts) {
+        this.numberOfParts = numberOfParts;
     }
 
-    private long id;
-    private String supplier;
-    private String supplierCode;
-    private String planner;
-    private String plannerNumber;
-    private String backupPlanner;
-    private String backupPlannerNumber;
-    private String country;
-    private String plannerEmail;
-    private long numberOfItems;
+
 }

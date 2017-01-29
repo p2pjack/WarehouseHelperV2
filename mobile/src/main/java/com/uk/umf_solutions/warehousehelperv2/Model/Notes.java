@@ -9,12 +9,18 @@ import io.realm.RealmObject;
 
 public class Notes extends RealmObject{
 
-    public long getId() {
-        return id;
+    private long noteId;
+    private String messageTitle;
+    private String messageDescription;
+    private String imagePath;
+    private long dateAdded;
+
+    public long getNoteId() {
+        return noteId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setNoteId(long noteId) {
+        this.noteId = noteId;
     }
 
     public String getMessageTitle() {
@@ -48,11 +54,5 @@ public class Notes extends RealmObject{
     public void setDateAdded(long dateAdded) {
         this.dateAdded = dateAdded;
     }
-
-    private long id;
-    private String messageTitle;
-    private String messageDescription;
-    private String imagePath;
-    private long dateAdded;
 
 }
