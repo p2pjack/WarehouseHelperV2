@@ -1,6 +1,7 @@
 package com.uk.umf_solutions.warehousehelperv2.Model;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by Eaun-Ballinger on 28/01/2017.
@@ -8,7 +9,7 @@ import io.realm.RealmObject;
  */
 
 public class Notes extends RealmObject{
-
+    @PrimaryKey
     private long noteId;
     private String messageTitle;
     private String messageDescription;
