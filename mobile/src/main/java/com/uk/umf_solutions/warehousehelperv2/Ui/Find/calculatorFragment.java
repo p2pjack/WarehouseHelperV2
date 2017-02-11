@@ -12,10 +12,10 @@ import com.uk.umf_solutions.warehousehelperv2.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FindFragment extends Fragment {
+public class calculatorFragment extends Fragment {
+    private View rootView;
 
-
-    public FindFragment() {
+    public calculatorFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,8 @@ public class FindFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_find, container, false);
+        rootView = inflater.inflate(R.layout.fragment_calculator, container, false);
+        return rootView;
     }
 
 }

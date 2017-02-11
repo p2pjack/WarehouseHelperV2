@@ -3,10 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.uk.umf_solutions.warehousehelperv2.Ui.Wms.WmsListFragment">
+    tools:context="com.uk.umf_solutions.warehousehelperv2.Ui.Suppliers.SupplierFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/wms_list_recyclerview"
+        android:id="@+id/supplier_list_recyclerview"
         android:background = "@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textColor="@color/colorPrimary"
-        android:text="@string/no_wms_list"
+        android:text="@string/no_supplier_list"
         android:padding="15dp"
         android:visibility="gone"
         android:gravity="center"
@@ -33,7 +33,7 @@
         android:clickable="true"
         app:fabSize="normal"
         app:srcCompat="@drawable/ic_add_fab"
-        android:id="@+id/fab_wms" />
+        android:id="@+id/fab_supplier" />
 
 
 </RelativeLayout>

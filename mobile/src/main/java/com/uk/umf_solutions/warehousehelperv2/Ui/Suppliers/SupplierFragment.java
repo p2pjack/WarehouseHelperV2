@@ -1,4 +1,4 @@
-package com.uk.umf_solutions.warehousehelperv2.Ui.Cigma;
+package com.uk.umf_solutions.warehousehelperv2.Ui.Suppliers;
 
 
 import android.os.Bundle;
@@ -12,12 +12,12 @@ import com.uk.umf_solutions.warehousehelperv2.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CigmaListFragment extends Fragment {
+public class SupplierFragment extends Fragment {
 
     private View mRootView;
 
 
-    public CigmaListFragment() {
+    public SupplierFragment() {
         // Required empty public constructor
     }
 
@@ -26,8 +26,7 @@ public class CigmaListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mRootView = inflater.inflate(R.layout.fragment_cigma_list, container, false);
-
+        mRootView = inflater.inflate(R.layout.fragment_supplier, container, false);
         return mRootView;
     }
 

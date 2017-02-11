@@ -1,13 +1,38 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.uk.umf_solutions.warehousehelperv2.Ui.Cigma.CigmaListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cigma_list_recyclerview"
+        android:background = "@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars = "vertical"
+        />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:textColor="@color/colorPrimary"
+        android:text="@string/no_cigma_list"
+        android:padding="15dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:typeface="serif" />
 
-</FrameLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:elevation="6dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_add_fab"
+        android:id="@+id/fab_cigma" />
+
+</RelativeLayout>
