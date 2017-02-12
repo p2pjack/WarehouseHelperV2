@@ -8,4 +8,14 @@
     <string name="no_supplier_list">No Suppliers Found</string>
     <string name="no_wms_list">No WMS list Found</string>
     <string name="calculator_goes_here">Calculator goes here</string>
+    <string name="title">Title</string>
+    <string name="action">Action</string>
+    <string name="some_text">some text</string>
+    <string name="message">Message</string>
+    <string name="planner_name">Planner : </string>
+    <string name="phone_number">Phone number :</string>
+    <string name="code">Code :</string>
+    <string name="email">Email :</string>
+    <string name="supplier">Supplier</string>
+    <string name="planner">Planner</string>
 </resources>

@@ -1,44 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/padding_default"
+    android:orientation="horizontal"
     tools:context="com.uk.umf_solutions.warehousehelperv2.Ui.Find.calculatorFragment">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentTop="true"
-        tools:ignore="UselessParent">
+        android:orientation="horizontal"
+        android:background="@android:color/transparent">
 
         <TextView
             android:text="@string/calculator_goes_here"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:id="@+id/textview_calc"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_size_xlarge"
             android:textStyle="bold"
             android:typeface="monospace"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:textColor="@color/black"
+            android:gravity="center" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:fabSize="normal"
-            app:srcCompat="@drawable/ic_add_fab"
-            android:id="@+id/fab_calculator"
-            app:rippleColor="@color/colorAccent"
-            app:elevation="6dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
 
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

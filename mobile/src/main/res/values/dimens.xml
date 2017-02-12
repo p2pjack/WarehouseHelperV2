@@ -10,10 +10,10 @@
     <dimen name="activity_horizontal_margin_large">20dp</dimen>
     <dimen name="activity_vertical_margin_large">20dp</dimen>
     <!-- Text Size *4dp  per the Android Design guidelines.    -->
-    <dimen name="text_size_small">8dp</dimen>
-    <dimen name="text_size_default">12dp</dimen>
-    <dimen name="text_size_medium">16dp</dimen>
-    <dimen name="text_size_large">24dp</dimen>
+    <dimen name="text_size_small">8sp</dimen>
+    <dimen name="text_size_default">12sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
     <!-- Padding size *4dp  per the Android Design guidelines. -->
     <dimen name="padding_default">4dp</dimen>
     <dimen name="padding_medium">8dp</dimen>
@@ -51,5 +51,11 @@
 
     <dimen name="product_image_thumbnail_size">90dp</dimen>
     <dimen name="height_note_order">90dp</dimen>
+
+    <dimen name="elevation_default">6dp</dimen>
+    <dimen name="elevation_medium">16dp</dimen>
+    <dimen name="elevation_large">24dp</dimen>
+    <dimen name="image_person_y">60dp</dimen>
+    <dimen name="image_person_x">80dp</dimen>
 
 </resources>
