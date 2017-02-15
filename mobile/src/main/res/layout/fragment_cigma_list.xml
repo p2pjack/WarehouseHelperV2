@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/primary"
         android:text="@string/no_cigma_list"
         android:padding="@dimen/padding_medium"
         android:visibility="gone"
