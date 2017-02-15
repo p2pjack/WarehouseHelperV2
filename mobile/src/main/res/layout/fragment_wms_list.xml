@@ -1,10 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding_default"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.uk.umf_solutions.warehousehelperv2.Ui.Wms.WmsListFragment">
+    tools:context=".Ui.Wms.WmsListFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/wms_list_recyclerview"
@@ -15,6 +16,7 @@
         />
 
     <TextView
+        android:id="@+id/empty_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textColor="@color/primary"
