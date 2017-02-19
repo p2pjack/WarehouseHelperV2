@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/padding_default"
     android:orientation="horizontal"
-    tools:context=".Ui.Find.calculatorFragment">
+    tools:context=".Ui.Calculator.calculatorFragment">
 
 
     <LinearLayout

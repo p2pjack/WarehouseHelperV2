@@ -1,4 +1,4 @@
-package com.uk.umf_solutions.warehousehelperv2.Common;
+package com.uk.umf_solutions.warehousehelperv2.common;
 
 /**
  * Created by Eaun-Ballinger on 28/01/2017.

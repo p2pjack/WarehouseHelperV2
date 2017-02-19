@@ -28,7 +28,9 @@ public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.ViewHold
     private final Context mContext;
     private final OnWmsSelectListener mListener;
 
-    public WmsListAdapter(List<Wms> wms, Context mContext, OnWmsSelectListener mListener) {
+    public WmsListAdapter(List<Wms> wms,
+                          Context mContext,
+                          OnWmsSelectListener mListener) {
         this.mWMS = wms;
         this.mContext = mContext;
         this.mListener = mListener;
@@ -36,7 +38,8 @@ public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View wmsView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view_items,parent,false);
+        View wmsView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.row_view_items,parent,false);
         ViewHolder viewHolder = new ViewHolder(wmsView);
         return viewHolder;
     }
@@ -44,10 +47,14 @@ public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         if (mWMS != null) {
-            Wms wms = mWMS.get(position);
-            holder.BKtitle.setText(wms.getMessageTitle());
-            holder.BKaction.setText(wms.getMessageActions());
-            holder.BKdiscription.setText(wms.getMessageDescription());
+            try {
+                Wms wms = mWMS.get(position);
+                holder.BKtitle.setText(wms.getMessageTitle());
+                holder.BKaction.setText(wms.getMessageActions());
+                holder.BKdiscription.setText(wms.getMessageDescription());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

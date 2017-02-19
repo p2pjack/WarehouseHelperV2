@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/padding_default"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Ui.Suppliers.SupplierFragment">
+    tools:context=".Ui.Suppliers.SupplierListFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/supplier_list_recyclerview"

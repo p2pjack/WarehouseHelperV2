@@ -1,4 +1,4 @@
-package com.uk.umf_solutions.warehousehelperv2.Common;
+package com.uk.umf_solutions.warehousehelperv2.common;
 
 /**
  * Created by Eaun-Ballinger on 28/01/2017.
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.uk.umf_solutions.warehousehelperv2.R;
 
@@ -20,8 +21,9 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.tabs) TabLayout tabLayout;
-    @BindView(R.id.viewpager) ViewPager viewPager;
+    @BindView(R.id.toolbar)Toolbar mToolbar;
+    @BindView(R.id.tabs) TabLayout mTabLayout;
+    @BindView(R.id.viewpager) ViewPager mViewPager;
 
 
     private Activity mActivity;
@@ -33,7 +35,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+        setupViewPager();
+    }
+
+
+    private void setupViewPager(){
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(adapter);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
 
