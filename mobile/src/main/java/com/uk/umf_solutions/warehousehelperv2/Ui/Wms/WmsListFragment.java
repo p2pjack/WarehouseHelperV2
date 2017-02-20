@@ -45,17 +45,24 @@ public class WmsListFragment extends Fragment implements OnWmsSelectListener{
         mRootView = inflater.inflate(R.layout.fragment_wms_list, container, false);
         ButterKnife.bind(this,mRootView);
 
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // call me a method
+            }
+        });
+
         //setup RecyclerView
         List<Wms> tempWms = new ArrayList<>();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         mAdapter = new WmsListAdapter(tempWms,getContext(),this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mAdapter);
-//        if (tempWms.size() < 1){
-//            ShowEmptyText();
-//        }else{
-//            EmptyTextShowGone();
-//        }
+        if (tempWms.size() < 1){
+            ShowEmptyText();
+        }else{
+            EmptyTextShowGone();
+        }
 
         return mRootView;
     }

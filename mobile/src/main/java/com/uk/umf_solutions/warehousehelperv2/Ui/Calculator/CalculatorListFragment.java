@@ -12,10 +12,10 @@ import com.uk.umf_solutions.warehousehelperv2.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class calculatorFragment extends Fragment {
+public class CalculatorListFragment extends Fragment {
     private View rootView;
 
-    public calculatorFragment() {
+    public CalculatorListFragment() {
         // Required empty public constructor
     }
 

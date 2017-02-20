@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.uk.umf_solutions.warehousehelperv2.Ui.Calculator.CalculatorListFragment;
 import com.uk.umf_solutions.warehousehelperv2.Ui.Cigma.CigmaListFragment;
 import com.uk.umf_solutions.warehousehelperv2.Ui.Notes.NoteListFragment;
 import com.uk.umf_solutions.warehousehelperv2.Ui.Suppliers.SupplierListFragment;
@@ -31,7 +32,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
                 break;
             case 3: selectedFragment = new SupplierListFragment();
                 break;
-            case 4: selectedFragment = new CigmaListFragment();
+            case 4: selectedFragment = new CalculatorListFragment();
                 break;
             default: selectedFragment = new WmsListFragment();
                 break;

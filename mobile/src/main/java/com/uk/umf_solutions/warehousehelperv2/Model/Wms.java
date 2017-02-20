@@ -15,6 +15,24 @@ public class Wms extends RealmObject {
     private String messageActions;
     private String messageDescription;
 
+    public Wms(){
+    }
+
+    public Wms(Wms wms){
+        this.wmsId = wms.getWmsId();
+        this.messageTitle = wms.getMessageTitle();
+        this.messageActions = wms.getMessageActions();
+        this.messageDescription = wms.getMessageDescription();
+
+    }
+
+    public Wms(long wmsId,String messageTitle,String messageActions,String messageDescription){
+            this.wmsId = wmsId;
+            this.messageTitle = messageTitle;
+            this.messageActions = messageActions;
+            this.messageDescription = messageDescription;
+    }
+
     public long getWmsId() {
         return wmsId;
     }
