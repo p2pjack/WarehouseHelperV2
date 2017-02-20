@@ -12,6 +12,7 @@ public class Notes extends RealmObject{
     @PrimaryKey
     private long noteId;
     private String messageTitle;
+    private String messageActions;
     private String messageDescription;
     private String imagePath;
     private long dateAdded;
@@ -56,4 +57,11 @@ public class Notes extends RealmObject{
         this.dateAdded = dateAdded;
     }
 
+    public String getMessageActions() {
+        return messageActions;
+    }
+
+    public void setMessageActions(String messageActions) {
+        this.messageActions = messageActions;
+    }
 }

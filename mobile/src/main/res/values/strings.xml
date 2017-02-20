@@ -16,6 +16,10 @@
     <string name="phone_number">Phone number :</string>
     <string name="code">Code :</string>
     <string name="email">Email :</string>
-    <string name="supplier">Supplier</string>
+    <string name="supplier">Supplier :-</string>
     <string name="planner">Planner</string>
+    <string name="supplier_country">Country : </string>
+    <string name="backup_planners">Bckup Planner :</string>
+    <string name="backup_number">Backup Number :</string>
+    <string name="number_of_parts">Number Of Parts :</string>
 </resources>

@@ -22,73 +22,67 @@ import butterknife.ButterKnife;
  *
  */
 
-public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.ViewHolder> {
+public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.WMSViewHolder> {
 
-    private List<Wms> mWMS;
+    private ThreadLocal<List<Wms>> mWMS;
     private final Context mContext;
     private final OnWmsSelectListener mListener;
 
     public WmsListAdapter(List<Wms> wms,
                           Context mContext,
                           OnWmsSelectListener mListener) {
-        this.mWMS = wms;
+        this.mWMS = new ThreadLocal<>();
+        this.mWMS.set(wms);
         this.mContext = mContext;
         this.mListener = mListener;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View wmsView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_view_items,parent,false);
-        ViewHolder viewHolder = new ViewHolder(wmsView);
-        return viewHolder;
+    public WMSViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View wmsView;
+        wmsView = LayoutInflater.from(parent.getContext())
+        .inflate(R.layout.row_view_items,parent,false);
+        return new WMSViewHolder(wmsView);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        if (mWMS != null) {
-            try {
-                Wms wms = mWMS.get(position);
-                holder.BKtitle.setText(wms.getMessageTitle());
-                holder.BKaction.setText(wms.getMessageActions());
-                holder.BKdiscription.setText(wms.getMessageDescription());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+    public void onBindViewHolder(WMSViewHolder holder, int position) {
+        Wms wms = mWMS.get().get(position);
+        holder.BKtitle.setText(wms.getMessageTitle());
+        holder.BKaction.setText(wms.getMessageActions());
+        holder.BKdiscription.setText(wms.getMessageDescription());
     }
 
     @Override
     public int getItemCount() {
-        if (mWMS != null) {
-            return mWMS.size();
-        } else {
-            return 0;
-        }
+
+            return mWMS.get().size();
+
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener{
+    public class WMSViewHolder extends RecyclerView.ViewHolder implements
+            View.OnClickListener,View.OnLongClickListener{
         @BindView(R.id.title) TextView BKtitle;
         @BindView(R.id.action) TextView BKaction;
         @BindView(R.id.message) TextView BKdiscription;
 
-        public ViewHolder(View itemView) {
+        public WMSViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
 
         @Override
         public void onClick(View view) {
-            Wms selected = mWMS.get(getLayoutPosition());
+            Wms selected = mWMS.get().get(getLayoutPosition());
             mListener.OnSelectedWMS(selected);
 
         }
 
         @Override
         public boolean onLongClick(View view) {
-            Wms longSelected = mWMS.get(getLayoutPosition());
+            Wms longSelected = mWMS.get().get(getLayoutPosition());
             mListener.OnLongClickWMS(longSelected);
-            return true;
+            return false;
         }
     }
 }

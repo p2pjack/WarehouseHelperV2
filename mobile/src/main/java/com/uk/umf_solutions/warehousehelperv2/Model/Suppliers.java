@@ -1,5 +1,7 @@
 package com.uk.umf_solutions.warehousehelperv2.Model;
 
+import android.graphics.Bitmap;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -11,6 +13,7 @@ import io.realm.annotations.PrimaryKey;
 public class Suppliers extends RealmObject{
     @PrimaryKey
     private long supplierId;
+    private Bitmap planner_image;
     private String supplier;
     private String supplierCode;
     private String planner;
@@ -102,4 +105,11 @@ public class Suppliers extends RealmObject{
     }
 
 
+    public Bitmap getPlanner_image() {
+        return planner_image;
+    }
+
+    public void setPlanner_image(Bitmap planner_image) {
+        this.planner_image = planner_image;
+    }
 }
