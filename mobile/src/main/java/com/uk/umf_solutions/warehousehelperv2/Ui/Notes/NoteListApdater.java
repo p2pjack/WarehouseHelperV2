@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class NoteListApdater extends RecyclerView.Adapter<NoteListApdater.NoteViewHolder> {
     private ThreadLocal<List<Notes>> mNotes;
-    private final Context mContext;
+    private Context mContext;
     private final OnNoteSelectedListener mListener;
 
     public NoteListApdater(List<Notes> NOTES, Context mContext, OnNoteSelectedListener mListener) {
@@ -44,10 +44,12 @@ public class NoteListApdater extends RecyclerView.Adapter<NoteListApdater.NoteVi
 
     @Override
     public void onBindViewHolder(NoteViewHolder holder, int position) {
-        Notes notes = mNotes.get().get(position);
-        holder.BKtitle.setText(notes.getMessageTitle());
-        holder.BKaction.setText(notes.getMessageActions());
-        holder.BKdiscription.setText(notes.getMessageDescription());
+        if (mNotes != null) {
+            Notes notes = mNotes.get().get(position);
+            holder.BKtitle.setText(notes.getMessageTitle());
+            holder.BKaction.setText(notes.getMessageActions());
+            holder.BKdiscription.setText(notes.getMessageDescription());
+        }
     }
 
     @Override
@@ -55,7 +57,7 @@ public class NoteListApdater extends RecyclerView.Adapter<NoteListApdater.NoteVi
         return mNotes.get().size();
     }
 
-    public class NoteViewHolder extends RecyclerView.ViewHolder implements OnNoteSelectedListener {
+    public class NoteViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {
         @BindView(R.id.title)
         TextView BKtitle;
         @BindView(R.id.action) TextView BKaction;
@@ -67,13 +69,13 @@ public class NoteListApdater extends RecyclerView.Adapter<NoteListApdater.NoteVi
         }
 
         @Override
-        public void OnSelectedNote(Notes selectedNote) {
+        public void onClick(View view) {
             Notes selected = mNotes.get().get(getLayoutPosition());
             mListener.OnSelectedNote(selected);
         }
 
         @Override
-        public boolean OnLongClickNote(Notes clickedNote) {
+        public boolean onLongClick(View view) {
             Notes longSelected = mNotes.get().get(getLayoutPosition());
             mListener.OnLongClickNote(longSelected);
             return false;

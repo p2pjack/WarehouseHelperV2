@@ -85,7 +85,7 @@ public class SupplierListFragment extends Fragment implements OnSupplierSelected
     }
 
     @Override
-    public boolean OnLongClickSupplier(Suppliers clickedSupplier) {
+    public void OnLongClickSupplier(Suppliers clickedSupplier) {
 
     }
 }

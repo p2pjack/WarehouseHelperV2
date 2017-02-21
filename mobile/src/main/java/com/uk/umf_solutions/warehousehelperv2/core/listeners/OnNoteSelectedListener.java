@@ -11,5 +11,5 @@ import com.uk.umf_solutions.warehousehelperv2.Model.Notes;
 public interface OnNoteSelectedListener {
 
     void OnSelectedNote(Notes selectedNote);
-    boolean OnLongClickNote(Notes clickedNote);
+    void OnLongClickNote(Notes clickedNote);
 }

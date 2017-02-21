@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uk.umf_solutions.warehousehelperv2.Model.Suppliers;
@@ -28,7 +27,7 @@ public class SupplierListAdapter extends
         RecyclerView.Adapter<SupplierListAdapter.SupplierViewHolder> {
 
     private ThreadLocal<List<Suppliers>> mSupplier;
-    private final Context mContext;
+    private Context mContext;
     private final OnSupplierSelectedListener mListner;
 
     public SupplierListAdapter(List<Suppliers> supplier, Context mContext, OnSupplierSelectedListener mListner) {
@@ -48,17 +47,18 @@ public class SupplierListAdapter extends
 
     @Override
     public void onBindViewHolder(SupplierViewHolder holder, int position) {
-        Suppliers suppliers = mSupplier.get().get(position);
-        holder.BKperson_image.setImageBitmap(suppliers.getPlanner_image());
-        holder.BKplanner_name.setText(suppliers.getPlanner());
-        holder.BKemail.setText(suppliers.getPlannerEmail());
-        holder.BKphone.setText(suppliers.getPlannerNumber());
-        holder.BKsupplier_code.setText(suppliers.getSupplierCode());
-        holder.BKsupplier.setText(suppliers.getSupplier());
-        holder.BKplanner_backup.setText(suppliers.getBackupPlanner());
-        holder.BKpnone_number_backup.setText(suppliers.getBackupPlannerNumber());
-        holder.BKcountry.setText(suppliers.getCountry());
-        holder.BKnumber_of_parts.setText((int) suppliers.getNumberOfParts());
+        if (mContext != null) {
+            Suppliers suppliers = mSupplier.get().get(position);
+            holder.BKplanner_name.setText(suppliers.getPlanner());
+            holder.BKemail.setText(suppliers.getPlannerEmail());
+            holder.BKphone.setText(suppliers.getPlannerNumber());
+            holder.BKsupplier_code.setText(suppliers.getSupplierCode());
+            holder.BKsupplier.setText(suppliers.getSupplier());
+            holder.BKplanner_backup.setText(suppliers.getBackupPlanner());
+            holder.BKpnone_number_backup.setText(suppliers.getBackupPlannerNumber());
+            holder.BKcountry.setText(suppliers.getCountry());
+            holder.BKnumber_of_parts.setText((int) suppliers.getNumberOfParts());
+        }
     }
 
     @Override
@@ -66,8 +66,8 @@ public class SupplierListAdapter extends
         return mSupplier.get().size();
     }
 
-    class SupplierViewHolder extends RecyclerView.ViewHolder implements OnSupplierSelectedListener{
-        @BindView(R.id.person_image) ImageView BKperson_image;
+    class SupplierViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener{
+        //@BindView(R.id.person_image) ImageView BKperson_image;
         @BindView(R.id.planner_name) TextView BKplanner_name;
         @BindView(R.id.email) TextView BKemail;
         @BindView(R.id.phone) TextView BKphone;
@@ -83,16 +83,16 @@ public class SupplierListAdapter extends
         }
 
         @Override
-        public void OnSelectedSupplier(Suppliers selectedSupplier) {
+        public void onClick(View view) {
             Suppliers selected = mSupplier.get().get(getLayoutPosition());
             mListner.OnSelectedSupplier(selected);
         }
 
         @Override
-        public boolean OnLongClickSupplier(Suppliers clickedSupplier) {
+        public boolean onLongClick(View view) {
             Suppliers selected = mSupplier.get().get(getLayoutPosition());
             mListner.OnLongClickSupplier(selected);
-            return true;
+            return false;
         }
     }
 }

@@ -11,5 +11,5 @@ import com.uk.umf_solutions.warehousehelperv2.Model.Suppliers;
 public interface OnSupplierSelectedListener {
 
     void OnSelectedSupplier(Suppliers selectedSupplier);
-    boolean OnLongClickSupplier(Suppliers clickedSupplier);
+    void OnLongClickSupplier(Suppliers clickedSupplier);
 }

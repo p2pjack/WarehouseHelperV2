@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.WMSViewHolder> {
 
     private ThreadLocal<List<Wms>> mWMS;
-    private final Context mContext;
+    private Context mContext;
     private final OnWmsSelectListener mListener;
 
     public WmsListAdapter(List<Wms> wms,
@@ -47,10 +47,12 @@ public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.WMSViewH
 
     @Override
     public void onBindViewHolder(WMSViewHolder holder, int position) {
-        Wms wms = mWMS.get().get(position);
-        holder.BKtitle.setText(wms.getMessageTitle());
-        holder.BKaction.setText(wms.getMessageActions());
-        holder.BKdiscription.setText(wms.getMessageDescription());
+        if (mWMS != null) {
+            Wms wms = mWMS.get().get(position);
+            holder.BKtitle.setText(wms.getMessageTitle());
+            holder.BKaction.setText(wms.getMessageActions());
+            holder.BKdiscription.setText(wms.getMessageDescription());
+        }
     }
 
     @Override
@@ -82,7 +84,7 @@ public class WmsListAdapter extends RecyclerView.Adapter<WmsListAdapter.WMSViewH
         public boolean onLongClick(View view) {
             Wms longSelected = mWMS.get().get(getLayoutPosition());
             mListener.OnLongClickWMS(longSelected);
-            return false;
+            return true;
         }
     }
 }
